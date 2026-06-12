@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* ===== 마이스타일랩AI 디자인 토큰 (시니어 친화) ===== */
+@theme {
+  /* 색상 — 따뜻하고 차분한 톤 */
+  --color-brand: #5b7c9d;        /* 메인 (차분한 블루그레이) */
+  --color-brand-dark: #3f5c78;
+  --color-brand-soft: #eaf1f7;
+  --color-accent: #c98a5e;       /* 포인트 (따뜻한 테라코타) */
+  --color-ink: #1f2430;          /* 본문 글씨 (고대비) */
+  --color-ink-soft: #4a5160;
+  --color-line: #dfe3ea;
+  --color-surface: #ffffff;
+  --color-canvas: #f6f7f9;
+
+  /* 글씨 — 시니어 기준 큰 기본값 (최소 16px) */
+  --text-base: 18px;
+  --text-lg: 22px;
+  --text-xl: 28px;
+  --text-2xl: 34px;
+
+  /* 시니어 친화: 큰 터치 타깃, 넉넉한 간격 */
+  --spacing-tap: 56px;           /* 버튼/탭 최소 높이 */
+  --radius-card: 18px;
+}
+
+/* ===== 전역 기본 (모바일 우선) ===== */
+:root {
+  font-family: system-ui, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-size: 18px;               /* 시니어 기본 본문 18px */
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* 앱 컨테이너: 모바일 폭 고정, 데스크톱에선 가운데 정렬 */
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100svh;
+  background: var(--color-canvas);
+  position: relative;
+}
+
+/* 버튼/입력은 글씨를 줄이지 않는다 (시니어 가독성) */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* 접근성: 포커스가 잘 보이게 */
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+}
